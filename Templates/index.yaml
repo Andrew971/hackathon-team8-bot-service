@@ -12,12 +12,12 @@ Parameters:
   AuthenticationTopicArn:
     Type: String
     Description: Name the bucket used for storing the Pipeline Artifacts.
-    MaxLength: 50
+    MaxLength: 500
     MinLength: 5
   ApiLogicalId:
     Type: String
     Description: Name the bucket used for storing the Pipeline Artifacts.
-    MaxLength: 50
+    MaxLength: 500
     MinLength: 5
   ApiRootResource:
     Type: String

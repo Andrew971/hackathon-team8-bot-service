@@ -61,7 +61,7 @@ Resources:
   LambdaHookFullfillTaskLambda: 
     Type: AWS::CloudFormation::Stack
     Properties: 
-      TemplateURL: ./LambdaHookFulfillTask.yaml
+      TemplateURL: ./HookFulfillTaskLambda.yaml
       Parameters:
         FunctionName: HookFulfillTaskLambda-botService
         FunctionDescription: Lambda function that update a job and store it to dynamodb.

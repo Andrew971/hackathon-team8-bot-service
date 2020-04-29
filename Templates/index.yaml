@@ -39,12 +39,31 @@ Parameters:
     Description: Name the bucket used for storing the Pipeline Artifacts.
 Resources: 
 
-  UpdateJobMethod: 
+  ChatbotTaskLambda: 
     Type: AWS::CloudFormation::Stack
     Properties: 
       TemplateURL: ./chatbotTaskLambda.yaml
       Parameters:
         FunctionName: TaskBot-botService
+        FunctionDescription: Lambda function that update a job and store it to dynamodb.
+        FunctionHandler: index.handler
+        FunctionMemorySize: "128"
+        FunctionRuntimeVersion: nodejs12.x
+        FunctionTimeout: "10"
+
+        ServiceTag: bot-service
+        ApplicationTag: bot
+        ApiTypeTag: bot
+        PathRole: /
+
+        BackendAPI: !Ref BackendAPI
+
+  LambdaHookFullfillTaskLambda: 
+    Type: AWS::CloudFormation::Stack
+    Properties: 
+      TemplateURL: ./LambdaHookFullfillTaskLambda.yaml
+      Parameters:
+        FunctionName: LambdaHookFullfill-botService
         FunctionDescription: Lambda function that update a job and store it to dynamodb.
         FunctionHandler: index.handler
         FunctionMemorySize: "128"

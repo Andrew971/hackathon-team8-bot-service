@@ -44,7 +44,7 @@ Resources:
     Properties: 
       TemplateURL: ./chatbotTaskLambda.yaml
       Parameters:
-        FunctionName: TaskBot-botService
+        FunctionName: LambdaHookBot-botService
         FunctionDescription: Lambda function that update a job and store it to dynamodb.
         FunctionHandler: index.handler
         FunctionMemorySize: "128"
@@ -61,9 +61,9 @@ Resources:
   LambdaHookFullfillTaskLambda: 
     Type: AWS::CloudFormation::Stack
     Properties: 
-      TemplateURL: ./LambdaHookFullfillTaskLambda.yaml
+      TemplateURL: ./LambdaHookFulfillTask.yaml
       Parameters:
-        FunctionName: LambdaHookFullfill-botService
+        FunctionName: HookFulfillTaskLambda-botService
         FunctionDescription: Lambda function that update a job and store it to dynamodb.
         FunctionHandler: index.handler
         FunctionMemorySize: "128"

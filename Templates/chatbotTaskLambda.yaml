@@ -145,7 +145,7 @@ Resources:
               - lambda.amazonaws.com
             Action: sts:AssumeRole
       Policies: 
-        - PolicyName: !Sub ${FunctionName}-bot-policy
+        - PolicyName: !Sub ${FunctionName}-team8-bot-policy
           PolicyDocument: 
             Version: "2012-10-17"
             Statement: 
@@ -201,7 +201,7 @@ Resources:
               #     - !Sub ${DynamoDbTableARN}/*
               #     - !Sub ${DynamoDbTableARN}
       Path: !Ref PathRole
-      RoleName: !Sub team8-${FunctionName}-role
+      RoleName: !Sub team8-${FunctionName}-service-role
 
 Outputs:
 

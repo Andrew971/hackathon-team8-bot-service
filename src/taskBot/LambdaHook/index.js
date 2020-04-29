@@ -32,6 +32,7 @@ function dispatch(intentRequest, callback) {
 // Route the incoming request based on intent.
 // The JSON body of the request is provided in the event slot.
 exports.handler = (event, context, callback) => {
+  console.log('event', event)
   try {
     dispatch(event,
       (response) => {

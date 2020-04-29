@@ -92,7 +92,7 @@ Resources:
     Type: AWS::Lambda::Function
     Properties: 
       FunctionName: !Ref FunctionName
-      Code: ../../../src/Api/GetExpiredJob-MonetizeService/build
+      Code: ../../src/taskBot/LambdaHook/build
       Description: !Ref FunctionDescription
       Handler: !Ref FunctionHandler
       MemorySize: !Ref FunctionMemorySize
